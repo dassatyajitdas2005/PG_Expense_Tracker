@@ -1,0 +1,405 @@
+/* Basic Reset & Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Summary Info (Current Week/Month) */
+.summary-info {
+    display: flex;
+    justify-content: center; /* Center the week/month info */
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+    padding: 15px;
+    background-color: #eaf2f8;
+    border-radius: 8px;
+    border-left: 5px solid #3498db;
+}
+
+.summary-info p {
+    margin: 5px 0;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.summary-info span {
+    color: #e74c3c; /* Highlighted values */
+}
+
+/* Navigation Controls (Prev/Next Week) */
+.navigation-controls, .action-buttons {
+    display: flex;
+    justify-content: center; /* Center buttons */
+    gap: 15px; /* Space between buttons */
+    margin-bottom: 25px;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px; /* Rounded buttons */
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    flex-shrink: 0; /* Prevent buttons from shrinking too much */
+}
+
+button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+
+/* Specific button styles */
+#reset-data-btn { /* Renamed from reset-month-btn */
+    background-color: #e74c3c;
+}
+
+#reset-data-btn:hover {
+    background-color: #c0392b;
+}
+
+#download-report-btn {
+    background-color: #27ae60;
+}
+
+#download-report-btn:hover {
+    background-color: #229a53;
+}
+
+.primary-action-btn { /* Style for Finalize button */
+    background-color: #4CAF50; /* Green */
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 1.1em;
+}
+
+.primary-action-btn:hover {
+    background-color: #45a049;
+}
+
+
+/* Input Groups - General styling for label+input+button */
+.input-group, .payment-entry-group, .weekly-expense-input, .bazaar-input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+.input-group label, .weekly-expense-input label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.input-group input[type="text"],
+.payment-entry-group input[type="text"],
+.payment-entry-group input[type="number"],
+.weekly-expense-input input[type="number"],
+.bazaar-input input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    width: calc(100% - 22px); /* Adjust for padding and border */
+    max-width: 350px; /* Limit width for larger screens */
+    align-self: center; /* Center inputs */
+}
+
+.input-group button,
+.payment-entry-group button,
+.weekly-expense-input button,
+.bazaar-input button {
+    align-self: center; /* Center buttons */
+    width: auto; /* Buttons take only necessary width */
+    padding: 10px 20px;
+    font-size: 0.95em;
+}
+
+/* In-Charge Section */
+.incharge-section {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #eaf2f8; /* Light blue background */
+    border-radius: 10px;
+    border-left: 5px solid #3498db;
+    margin-bottom: 30px;
+    text-align: center; /* Center content within section */
+}
+
+#current-incharge-display {
+    font-weight: bold;
+    color: #007bff; /* Blue for in-charge name */
+    font-size: 1.2em;
+    margin-top: 10px;
+    display: block; /* Make it block to take full width */
+}
+
+#save-incharge-btn {
+    background-color: #3498db;
+}
+#save-incharge-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Payment Entry Group */
+.payment-entry-group {
+    border-left: 5px solid #f39c12; /* Orange border */
+    margin-top: 20px;
+}
+
+#add-entry-btn {
+    background-color: #f39c12; /* Orange */
+}
+
+#add-entry-btn:hover {
+    background-color: #e67e22;
+}
+
+/* Weekly Entries Display List */
+.weekly-entries-display {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+#weekly-entries-list {
+    list-style: none;
+    padding: 0;
+}
+
+#weekly-entries-list li {
+    background-color: #f0f0f0;
+    padding: 10px 15px;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    border-radius: 4px;
+}
+
+#weekly-entries-list li:last-child {
+    border-bottom: none;
+}
+
+#weekly-entries-list li span {
+    font-weight: bold;
+    color: #444;
+}
+
+#weekly-entries-list li .remove-entry-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    font-size: 0.9em;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+#weekly-entries-list li .remove-entry-btn:hover {
+    background-color: #c82333;
+}
+
+
+/* Bazaar Section - Reusing previous styles, minimal changes */
+.bazaar-section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f0f8ff;
+    border-radius: 10px;
+    border-left: 5px solid #6495ed;
+    margin-bottom: 30px;
+}
+
+#add-bazaar-item-btn {
+    background-color: #6495ed;
+    padding: 10px 20px;
+    font-size: 0.9em;
+    width: auto;
+}
+
+#add-bazaar-item-btn:hover {
+    background-color: #4169e1;
+}
+
+#bazaar-items-list {
+    list-style: none;
+    padding: 0;
+}
+
+#bazaar-items-list li {
+    background-color: #ffffff;
+    padding: 10px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+#bazaar-items-list li .remove-item-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    font-size: 0.9em;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+#bazaar-items-list li .remove-item-btn:hover {
+    background-color: #c82333;
+}
+
+
+/* Summary Section */
+.summary-section {
+    background-color: #e8f6f3;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    border-left: 5px solid #48c9b0;
+}
+
+.summary-section p {
+    font-size: 1.1em;
+    margin: 8px 0;
+}
+
+.summary-section span {
+    font-weight: bold;
+    color: #28b463;
+}
+
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+        margin: 10px auto;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .summary-info {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .summary-info p {
+        margin: 5px 0;
+    }
+
+    .navigation-controls, .action-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    button {
+        width: 80%; /* Make buttons wider on small screens */
+        padding: 15px 20px;
+        font-size: 1.1em;
+    }
+
+    /* Adjust specific input groups for mobile */
+    .input-group input[type="text"],
+    .payment-entry-group input[type="text"],
+    .payment-entry-group input[type="number"],
+    .weekly-expense-input input[type="number"],
+    .bazaar-input input[type="text"] {
+        width: 90%;
+        max-width: 90%; /* Override max-width for mobile */
+    }
+
+    .input-group button,
+    .payment-entry-group button,
+    .weekly-expense-input button,
+    .bazaar-input button {
+        width: 80%;
+    }
+
+    .payment-entry-group {
+        align-items: center; /* Center content of this flex column on mobile */
+    }
+
+    #weekly-entries-list li {
+        flex-direction: column; /* Stack name/amount and remove button */
+        align-items: flex-start; /* Align text to left */
+        gap: 5px;
+        padding: 12px;
+    }
+
+    #weekly-entries-list li span {
+        width: 100%; /* Take full width */
+        text-align: left;
+    }
+
+    #weekly-entries-list li .remove-entry-btn {
+        align-self: flex-end; /* Align button to the right */
+        margin-top: 5px; /* Add some space */
+    }
+}

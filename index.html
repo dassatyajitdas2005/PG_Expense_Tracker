@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PG Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>PG Expense Tracker</h1>
+
+        <div class="summary-info">
+            <p>Current Week: <span id="current-week">1</span></p>
+            <p>Current Month: <span id="current-month">1</span></p>
+        </div>
+
+        <div class="navigation-controls">
+            <button id="prev-week-btn">&laquo; Previous Week</button>
+            <button id="next-week-btn">Next Week &raquo;</button>
+        </div>
+
+        <div class="incharge-section">
+            <h2>Weekly In-Charge & Payments</h2>
+            <div class="input-group">
+                <label for="weekly-incharge-name">In-Charge:</label>
+                <input type="text" id="weekly-incharge-name" placeholder="Enter In-Charge name">
+                <button id="save-incharge-btn">Save In-Charge</button>
+            </div>
+            <p>Current In-Charge: <span id="current-incharge-display">Not Set</span></p>
+
+            <div class="payment-entry-group">
+                <h3>Add Payment Entry</h3>
+                <input type="text" id="payer-name-input" placeholder="Payer Name">
+                <input type="number" id="paid-amount-input" placeholder="Amount Paid" min="0">
+                <button id="add-entry-btn">Add Entry</button>
+            </div>
+
+            <div class="weekly-entries-display">
+                <h3>Weekly Entries:</h3>
+                <ul id="weekly-entries-list">
+                    </ul>
+            </div>
+
+            <div class="weekly-expense-input">
+                <label for="weekly-total-expense">Weekly Total Expense:</label>
+                <input type="number" id="weekly-total-expense" placeholder="Enter total expense" min="0">
+                <button id="save-weekly-expense-btn">Save Weekly Expense</button>
+            </div>
+
+            <button id="finalize-week-btn" class="primary-action-btn">Finalize Week Entries</button>
+        </div>
+
+
+        <div class="bazaar-section">
+            <h2>Weekly Bazaar Items</h2>
+            <div class="bazaar-input">
+                <input type="text" id="bazaar-item-input" placeholder="e.g., Potatoes, Onions, Milk">
+                <button id="add-bazaar-item-btn">Add Item</button>
+            </div>
+            <ul id="bazaar-items-list">
+                </ul>
+        </div>
+
+        <div class="summary-section">
+            <h2>Summary</h2>
+            <p>Weekly Total Paid: <span id="weekly-total-paid">0.00</span></p>
+            <p>Weekly Expense: <span id="weekly-expense-display">0.00</span></p>
+            <p>Monthly Total Paid: <span id="monthly-total-paid">0.00</span></p>
+            <p>Monthly Expense: <span id="monthly-expense-display">0.00</span></p>
+        </div>
+
+        <div class="action-buttons">
+            <button id="reset-data-btn">Reset All Data</button>
+            <button id="download-report-btn">Download Weekly Report (PDF)</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
